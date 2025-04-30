@@ -51,7 +51,10 @@ public class OrderService {
         if (existingCustomer == null) {
             customer = customerRepository.save(customer);
         }
-        customer=existingCustomer;
+        else{
+            customer=existingCustomer;
+        }
+        
 
         // 2. Retrieve the Store
         Store store = storeRepository.findById(placeOrderRequest.getStoreId())
